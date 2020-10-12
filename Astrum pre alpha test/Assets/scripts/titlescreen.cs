@@ -2,26 +2,43 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
-public class titlescreen : MonoBehaviour {
+public class titlescreen : MonoBehaviour
+{
 
     public GameObject titlemenu;
+    public GameObject start;
     public GameObject options;
-    public GameObject audio;
+    public GameObject aaudio;
+
+    public AudioMixer audioMixer;
+
+    public int gameplayAudio;
+    public int musicAudio;
+
 
     void Start()
     {
 
         titlemenu.SetActive(true);
+        start.SetActive(false);
         options.SetActive(false);
-        audio.SetActive(false);
+        aaudio.SetActive(false);
 
     } 
 
-    public void Loadlevel ()
+    public void Loadlevel1 ()
     {
 
-        SceneManager.LoadScene ("test");
+        SceneManager.LoadScene ("test 02");
+
+    }
+
+    public void Loadlevel2()
+    {
+
+        SceneManager.LoadScene("PlanetsTest");
 
     }
 
@@ -36,8 +53,19 @@ public class titlescreen : MonoBehaviour {
     {
 
         titlemenu.SetActive(true);
+        start.SetActive(false);
         options.SetActive(false);
-        audio.SetActive(false);
+        aaudio.SetActive(false);
+
+    }
+
+    public void sStart()
+    {
+
+        titlemenu.SetActive(false);
+        start.SetActive(true);
+        options.SetActive(false);
+        aaudio.SetActive(false);
 
     }
 
@@ -45,8 +73,9 @@ public class titlescreen : MonoBehaviour {
     {
 
         titlemenu.SetActive(false);
+        start.SetActive(false);
         options.SetActive(true);
-        audio.SetActive(false);
+        aaudio.SetActive(false);
 
     }
 
@@ -54,8 +83,24 @@ public class titlescreen : MonoBehaviour {
     {
 
         titlemenu.SetActive(false);
+        start.SetActive(false);
         options.SetActive(false);
-        audio.SetActive(true);
+        aaudio.SetActive(true);
 
     }
+
+    public void setGameplayAudio(float gamAud)
+    {
+
+        audioMixer.SetFloat("GameAudio", gamAud);
+
+    }
+
+    public void setMusicAudio(float musAud)
+    {
+
+        audioMixer.SetFloat("MusAudio", musAud);
+
+    }
+
 }

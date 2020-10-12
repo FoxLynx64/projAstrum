@@ -8,6 +8,9 @@ public class randompopulation : MonoBehaviour
     public GameObject energyCollectable;
     public GameObject healthCollectable;
 
+    public Vector3 chunkOnStart;
+
+    public int range = 800;
     public int energyRatio = 50;
     public int healthRatio = 50;
     public int timesRan = 10;
@@ -22,7 +25,7 @@ public class randompopulation : MonoBehaviour
         while (timesRan > 0)
         {
 
-            populate();
+            populate(chunkOnStart);
 
             timesRan--;
 
@@ -30,7 +33,7 @@ public class randompopulation : MonoBehaviour
 
     }
 
-    void populate()
+    void populate(Vector3 chunk)
     {
 
         energy = Random.Range(0, 50) + energyRatio;
@@ -39,7 +42,8 @@ public class randompopulation : MonoBehaviour
         if (energy > health)
         {
 
-            Vector3 A = new Vector3(Random.Range(-20, 20), Random.Range(-20, 20), Random.Range(-20, 20));
+            Vector3 A = chunk + new Vector3(Random.Range(-range, range), Random.Range(-range, range), 
+                Random.Range(-range, range));
 
             Instantiate(energyCollectable, A, Quaternion.identity);
 
@@ -47,7 +51,8 @@ public class randompopulation : MonoBehaviour
         else
         {
 
-            Vector3 A = new Vector3(Random.Range(-20, 20), Random.Range(-20, 20), Random.Range(-20, 20));
+            Vector3 A = chunk + new Vector3(Random.Range(-range, range), Random.Range(-range, range),
+                Random.Range(-range, range));
 
             Instantiate(healthCollectable, A, Quaternion.identity);
 

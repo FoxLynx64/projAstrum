@@ -14,8 +14,27 @@ public class StaticVariables : MonoBehaviour
     void Start ()
     {
 
+        if(sensitivity == 0)
+        {
+
+            sensitivity = 500;
+
+        }
+
         script = A.GetComponent<CameraMovement>();
         script.Ssensitivity = sensitivity;
+
+    }
+
+    void Update ()
+    {
+
+        if (Input.GetKey("escape"))
+        {
+
+            Application.Quit();
+
+        }
 
     }
 
@@ -23,8 +42,7 @@ public class StaticVariables : MonoBehaviour
     {
 
         sensitivity = (int) newsensitivity;
-        Debug.Log(sensitivity);
-
+    
     }
 
 }

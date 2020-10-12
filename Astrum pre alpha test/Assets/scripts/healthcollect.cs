@@ -21,7 +21,7 @@ public class healthcollect : MonoBehaviour
 
     }
 
-    void OnCollisionEnter(Collision col)
+    void OnTriggerEnter(Collider col)
     {
         
         if (col.gameObject.tag == "Bullet")

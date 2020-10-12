@@ -5,24 +5,24 @@ using UnityEngine;
 public class playermovement : MonoBehaviour
 {
 
+    public ShipStats script;
+
+    private int amountBeforePenalty;
+    public int warpPenalty;
+
     public float rotationspeed = 0.5f;
     public float shipspeed = 1;
+    public float warpspeed = 1;
+
     public Rigidbody Rigid;
 
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
 
         keyboard_movement();
         controller_movement();
-
-        if (Input.GetKey("escape"))
-        {
-
-            Application.Quit();
-
-        }
 
     }
 
@@ -59,6 +59,40 @@ public class playermovement : MonoBehaviour
         {
             Rigid.AddForce(transform.forward * shipspeed * Time.deltaTime);
             //this.transform.position += transform.forward * shipspeed * Time.deltaTime;
+
+        }
+
+        if (Input.GetButtonDown("Fire2") && script.energy > 0)
+        {
+            
+            script.energy -= 1;
+
+        }
+        if (Input.GetButton("Fire2") && script.energy > 0)
+        {
+
+            this.transform.position += transform.forward * warpspeed * Time.deltaTime;
+            Rigid.AddForce(transform.forward * shipspeed * Time.deltaTime);
+            if (amountBeforePenalty > 0)
+            {
+
+                amountBeforePenalty -= 1;
+
+            }
+            else
+            {
+
+                amountBeforePenalty = warpPenalty;
+
+                script.energy -= 1;
+
+            }
+
+        }
+        if (Input.GetButtonUp("Fire2"))
+        {
+
+            amountBeforePenalty = warpPenalty;
 
         }
 
