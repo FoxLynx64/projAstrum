@@ -14,6 +14,11 @@ public class randompopulation : MonoBehaviour
     public int energyRatio = 50;
     public int healthRatio = 50;
     public int timesRan = 10;
+    public int solarSystem;
+
+    private GameObject newAst;
+
+    private string astString;
 
     private int energy;
     private int health;
@@ -21,6 +26,9 @@ public class randompopulation : MonoBehaviour
 
     void Start ()
     {
+
+        astString = "solar system" + "/" + "Asteroids" + solarSystem.ToString();
+        Debug.Log(astString);
 
         while (timesRan > 0)
         {
@@ -45,7 +53,8 @@ public class randompopulation : MonoBehaviour
             Vector3 A = chunk + new Vector3(Random.Range(-range, range), Random.Range(-range, range), 
                 Random.Range(-range, range));
 
-            Instantiate(energyCollectable, A, Quaternion.identity);
+            newAst = Instantiate(energyCollectable, A, Quaternion.identity) as GameObject;
+            newAst.transform.parent = GameObject.Find(astString).transform;
 
         }
         else
@@ -54,7 +63,8 @@ public class randompopulation : MonoBehaviour
             Vector3 A = chunk + new Vector3(Random.Range(-range, range), Random.Range(-range, range),
                 Random.Range(-range, range));
 
-            Instantiate(healthCollectable, A, Quaternion.identity);
+            newAst = Instantiate(healthCollectable, A, Quaternion.identity) as GameObject;
+            newAst.transform.parent = GameObject.Find(astString).transform;
 
         }
     

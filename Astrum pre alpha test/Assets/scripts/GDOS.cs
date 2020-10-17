@@ -29,7 +29,7 @@ public class GDOS : MonoBehaviour
     public void Loadlevel1()
     {
 
-        SceneManager.LoadScene("test 02");
+        SceneManager.LoadScene("ShipEditor");
 
     }
 
