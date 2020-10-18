@@ -66,6 +66,7 @@
      <Compile Include="Assets\scripts\planetGravity.cs" />
      <Compile Include="Assets\scripts\levelscore.cs" />
      <Compile Include="Assets\scripts\timeMultiplier.cs" />
+     <Compile Include="Assets\scripts\system.cs" />
      <Compile Include="Assets\scripts\shooting.cs" />
      <Compile Include="Assets\scripts\titlescreen.cs" />
      <Compile Include="Assets\scripts\paintball.cs" />
@@ -76,10 +77,13 @@
      <Compile Include="Assets\scripts\ShipStats.cs" />
      <Compile Include="Assets\SampleScenes\Scripts\ParticleSceneControls.cs" />
      <Compile Include="Assets\scripts\commandText.cs" />
+     <Compile Include="Assets\scripts\KdTree.cs" />
      <Compile Include="Assets\scripts\FollowGameObject.cs" />
+     <Compile Include="Assets\scripts\nearestSystem.cs" />
      <Compile Include="Assets\SampleScenes\Scripts\SlowMoButton.cs" />
      <Compile Include="Assets\scripts\screenSaver.cs" />
      <Compile Include="Assets\scripts\CameraMovement.cs" />
+     <Compile Include="Assets\scripts\player.cs" />
      <Compile Include="Assets\scripts\CamMoveEditor.cs" />
      <Compile Include="Assets\SampleScenes\Menu\Scripts\MenuSceneLoader.cs" />
      <Compile Include="Assets\SampleScenes\Scripts\PlaceTargetWithMouse.cs" />
@@ -89,8 +93,6 @@
      <Compile Include="Assets\scripts\healthcollect.cs" />
      <Compile Include="Assets\scripts\randompopulation.cs" />
      <Compile Include="Assets\scripts\artGrav.cs" />
-     <Compile Include="Assets\scripts\KdTree.cs" />
-     <Compile Include="Assets\scripts\nearestSystem.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

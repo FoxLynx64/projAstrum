@@ -5,8 +5,8 @@ using UnityEngine;
 public class nearestSystem : MonoBehaviour
 {
 
-    protected KdTree<system> systems = new KdTree<system>();
-    protected KdTree<player> players = new KdTree<player>();
+    List<system> systems = new List<system>();
+    List<player> players = new List<player>();
 
 
     // Start is called before the first frame update
@@ -19,16 +19,16 @@ public class nearestSystem : MonoBehaviour
     void Update()
     {
 
-        systems.UpdatePositions();
+        //systems.UpdatePositions();
 
-        foreach (var player in players)
-        {
+        //foreach (var player in players)
+        //{
 
-            player nearestSolSys = systems.FindClosest(player.transform.position);
+            //player nearestSolSys = systems.FindClosest(player.transform.position);
 
-            Debug.DrawLine(player.transform.position, nearestSolSys.transform.position, color.Red);
+            //Debug.DrawLine(player.transform.position, nearestSolSys.transform.position, color.Red);
 
-        }
+        //}
 
     }
 }

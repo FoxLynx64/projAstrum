@@ -3179,7 +3179,7 @@ PrefabInstance:
     - target: {fileID: 2860794180732776123, guid: fc731a9b2d132584091b0e03c2800e0a,
         type: 3}
       propertyPath: far clip plane
-      value: 10000
+      value: 10000000
       objectReference: {fileID: 0}
     - target: {fileID: 2860794180737175547, guid: fc731a9b2d132584091b0e03c2800e0a,
         type: 3}
@@ -3261,6 +3261,16 @@ PrefabInstance:
       propertyPath: warpPenalty
       value: 60
       objectReference: {fileID: 0}
+    - target: {fileID: 8050357338107182664, guid: fc731a9b2d132584091b0e03c2800e0a,
+        type: 3}
+      propertyPath: camRig
+      value: 
+      objectReference: {fileID: 136230479}
+    - target: {fileID: 8050357338606912476, guid: fc731a9b2d132584091b0e03c2800e0a,
+        type: 3}
+      propertyPath: far clip plane
+      value: 1e+9
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8050357338107182667, guid: fc731a9b2d132584091b0e03c2800e0a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: fc731a9b2d132584091b0e03c2800e0a, type: 3}
@@ -3282,6 +3292,7 @@ GameObject:
   - component: {fileID: 2123866384}
   - component: {fileID: 2123866386}
   - component: {fileID: 2123866388}
+  - component: {fileID: 2123866387}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -3338,6 +3349,28 @@ MonoBehaviour:
   energyRatio: 50
   healthRatio: 50
   timesRan: 25
+  solarSystem: 1
+--- !u!114 &2123866387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123866383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a77b34fec1b2574aa790975ea87b9d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  energyCollectable: {fileID: 5481769407370233535, guid: 8aab80fc0d9ec674eb981e899e73c124,
+    type: 3}
+  healthCollectable: {fileID: 5481769407370233535, guid: 8aab80fc0d9ec674eb981e899e73c124,
+    type: 3}
+  chunkOnStart: {x: 0, y: 0, z: 0}
+  range: 100000
+  energyRatio: 50
+  healthRatio: 50
+  timesRan: 50
   solarSystem: 1
 --- !u!114 &2123866388
 MonoBehaviour:

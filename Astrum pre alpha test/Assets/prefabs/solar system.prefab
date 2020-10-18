@@ -126,7 +126,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bc4a9323c67cd14eb43247f3ac0cd0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
   rb: {fileID: 5481769405626983235}
+  magnification: 4
+  regUpdate: 1
+  farUpdate: 4
+  playerDist: 10
 --- !u!1 &5481769406776717287
 GameObject:
   m_ObjectHideFlags: 0
@@ -170,7 +175,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.9153671, b: 0.86226416, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.2
   m_Range: 100000
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208

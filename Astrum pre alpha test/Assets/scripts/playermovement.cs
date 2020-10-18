@@ -7,15 +7,25 @@ public class playermovement : MonoBehaviour
 
     public ShipStats script;
 
+    public GameObject camRig;
+
     private int amountBeforePenalty;
     public int warpPenalty;
 
     public float rotationspeed = 0.5f;
     public float shipspeed = 1;
     public float warpspeed = 1;
+    public float Ssensitivity;
 
     public Rigidbody Rigid;
 
+
+    void start()
+    {
+
+        Ssensitivity = camRig.GetComponent<CameraMovement>().Ssensitivity;
+
+    }
 
     // Update is called once per frame
     void FixedUpdate()
@@ -50,10 +60,14 @@ public class playermovement : MonoBehaviour
 
         }
 
+        camRig.transform.Rotate(new Vector3(0, Input.GetAxis("right joystick") * Ssensitivity * Time.deltaTime, 0), Space.Self);
+
     }
 
     void keyboard_movement()
     {
+
+        camRig.transform.Rotate(new Vector3(0, Input.GetAxis("Mouse X") * Ssensitivity * Time.deltaTime, 0), Space.Self);
 
         if (Input.GetKey(KeyCode.Space))
         {
