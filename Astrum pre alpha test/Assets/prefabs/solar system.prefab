@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1829367825
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1829367826}
+  m_Layer: 0
+  m_Name: Asteroids
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1829367826
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1829367825}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5481769407370233534}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5481769405626983233
 GameObject:
   m_ObjectHideFlags: 0
@@ -16,7 +46,7 @@ GameObject:
   - component: {fileID: 5481769405626983232}
   m_Layer: 0
   m_Name: Sphere
-  m_TagString: Untagged
+  m_TagString: Star
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,7 +60,7 @@ Transform:
   m_GameObject: {fileID: 5481769405626983233}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1000, y: 1000, z: 1000}
+  m_LocalScale: {x: 10000, y: 10000, z: 10000}
   m_Children:
   - {fileID: 5481769406776717286}
   m_Father: {fileID: 5481769407370233534}
@@ -106,7 +136,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5481769405626983233}
   serializedVersion: 2
-  m_Mass: 10000
+  m_Mass: 100000
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
@@ -131,7 +161,7 @@ MonoBehaviour:
   magnification: 4
   regUpdate: 1
   farUpdate: 4
-  playerDist: 10
+  playerDist: 10000
 --- !u!1 &5481769406776717287
 GameObject:
   m_ObjectHideFlags: 0
@@ -175,7 +205,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.9153671, b: 0.86226416, a: 1}
-  m_Intensity: 0.2
+  m_Intensity: 1.7
   m_Range: 100000
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -233,6 +263,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5481769407370233534}
+  - component: {fileID: 1923025241983011490}
+  - component: {fileID: 1021050751}
+  - component: {fileID: 1021050752}
   m_Layer: 0
   m_Name: solar system
   m_TagString: Untagged
@@ -252,6 +285,65 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5481769405626983239}
+  - {fileID: 1829367826}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1923025241983011490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5481769407370233535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dbb7e7423a98094e883a07207860e64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Ssystem: {fileID: 5481769407370233535}
+  Asteroids: {fileID: 1829367825}
+  script1: {fileID: 1021050751}
+  script2: {fileID: 1021050752}
+--- !u!114 &1021050751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5481769407370233535}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a77b34fec1b2574aa790975ea87b9d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  energyCollectable: {fileID: 826154310115304451, guid: 0452652de58391c418c3f4913e83cc50,
+    type: 3}
+  healthCollectable: {fileID: 485635520015669154, guid: 828b2b6c45f65b94fb64832e4071df8d,
+    type: 3}
+  chunkOnStart: {x: 26600, y: 0, z: 0}
+  range: 800
+  energyRatio: 50
+  healthRatio: 50
+  timesRan: 25
+--- !u!114 &1021050752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5481769407370233535}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a77b34fec1b2574aa790975ea87b9d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  energyCollectable: {fileID: 826154310115304451, guid: 0452652de58391c418c3f4913e83cc50,
+    type: 3}
+  healthCollectable: {fileID: 485635520015669154, guid: 828b2b6c45f65b94fb64832e4071df8d,
+    type: 3}
+  chunkOnStart: {x: 25000, y: 0, z: 0}
+  range: 800
+  energyRatio: 50
+  healthRatio: 50
+  timesRan: 25

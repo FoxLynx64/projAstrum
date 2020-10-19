@@ -5,30 +5,45 @@ using UnityEngine;
 public class nearestSystem : MonoBehaviour
 {
 
-    List<system> systems = new List<system>();
-    List<player> players = new List<player>();
+    public KdTree<system> systems = new KdTree<system>();
+    public KdTree<player> players = new KdTree<player>();
 
 
     // Start is called before the first frame update
     void Start()
     {
+
+        players.Add(GameObject.FindWithTag("Player").GetComponent<player>());
         
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
 
-        //systems.UpdatePositions();
+        systems.UpdatePositions();
+        players.UpdatePositions();
 
-        //foreach (var player in players)
-        //{
+        foreach (var player in players)
+        {
 
-            //player nearestSolSys = systems.FindClosest(player.transform.position);
+            system nearestSolSys = systems.FindClosest(player.transform.position);
 
-            //Debug.DrawLine(player.transform.position, nearestSolSys.transform.position, color.Red);
+            Debug.DrawLine(player.transform.position, nearestSolSys.transform.position, Color.red);
+            Debug.Log(nearestSolSys.ToString());
 
-        //}
+            foreach (var system in systems)
+            {
+
+                system.Asteroids.SetActive(false);
+                
+            }
+
+            nearestSolSys.Asteroids.SetActive(true);
+            nearestSolSys.script1.enabled = true;
+            nearestSolSys.script2.enabled = true;
+
+        }
 
     }
 }
