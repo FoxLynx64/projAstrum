@@ -28,7 +28,7 @@ public class randomSolarSystem : MonoBehaviour
     {
 
         newSys = Instantiate(healthCollectable, new Vector3(0, 0, 0), Quaternion.identity);
-        newSys.name = "solar system" + (timesRan + 1).ToString();
+        newSys.name = "solar system " + (timesRan + 1).ToString();
         script.systems.Add(newSys.GetComponent<system>());
 
         while (timesRan > 0)

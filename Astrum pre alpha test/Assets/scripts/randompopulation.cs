@@ -54,6 +54,7 @@ public class randompopulation : MonoBehaviour
 
             newAst = Instantiate(energyCollectable, A, Quaternion.identity) as GameObject;
             newAst.transform.parent = GameObject.Find(astString).transform;
+            newAst.name = this.gameObject.name + " " + "E Asteroid" + timesRan.ToString();
 
         }
         else
@@ -64,6 +65,7 @@ public class randompopulation : MonoBehaviour
 
             newAst = Instantiate(healthCollectable, A, Quaternion.identity) as GameObject;
             newAst.transform.parent = GameObject.Find(astString).transform;
+            newAst.name = this.gameObject.name + " " + "H Asteroid" + timesRan.ToString();
 
         }
     
