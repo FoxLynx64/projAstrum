@@ -9,6 +9,7 @@ public class randomSolarSystem : MonoBehaviour
     public GameObject healthCollectable;
 
     public nearestSystem script;
+    public seed script2;
 
     public Vector3 chunkOnStart;
 
@@ -27,6 +28,12 @@ public class randomSolarSystem : MonoBehaviour
     void Start()
     {
 
+        while (script2.isRan == false)
+        {
+        }
+
+        Debug.Log(script2.isRan.ToString());
+        Debug.Log(script2.currentSeed.ToString());
         newSys = Instantiate(healthCollectable, new Vector3(0, 0, 0), Quaternion.identity);
         newSys.name = "solar system " + (timesRan + 1).ToString();
         script.systems.Add(newSys.GetComponent<system>());

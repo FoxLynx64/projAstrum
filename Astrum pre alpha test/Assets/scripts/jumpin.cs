@@ -67,8 +67,8 @@ public class jumpin : MonoBehaviour
                 //makes it so the player will spawn back were-ever the vehicle moves
                 player.transform.parent = gameObject.transform;
 				playercam.transform.parent = this.transform;
-				playercam.transform.SetPositionAndRotation (carcam.transform.position, 
-                    carcam.transform.rotation);
+				playercam.transform.SetPositionAndRotation (this.transform.position, 
+                    this.transform.rotation);
                 //makes it so the main camera will not be the fpsplayer and the player 
                 //will not move while in the vehicle
                 player.SetActive(false);

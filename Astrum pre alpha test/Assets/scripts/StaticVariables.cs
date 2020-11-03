@@ -10,6 +10,10 @@ public class StaticVariables : MonoBehaviour
     public GameObject A;
     CameraMovement script;
 
+    static public int seed;
+
+    static public bool randSeed = true;
+
 
     void Start ()
     {
@@ -43,6 +47,22 @@ public class StaticVariables : MonoBehaviour
 
         sensitivity = (int) newsensitivity;
     
+    }
+
+    public void setSeed(string newSeed)
+    {
+
+        seed = int.Parse(newSeed);
+        Debug.Log(seed.ToString());
+
+    }
+
+    public void randTog(bool Tog)
+    {
+
+        randSeed = Tog;
+        Debug.Log(randSeed.ToString());
+
     }
 
 }

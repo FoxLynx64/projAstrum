@@ -128,14 +128,14 @@ public class playermovement : MonoBehaviour
         if (Input.GetKey("d"))
         {
 
-            this.transform.Rotate(new Vector3(0, rotationspeed * Time.deltaTime, 0));
+            this.transform.Rotate(new Vector3(0, rotationspeed * Time.deltaTime, 0), Space.World);
 
         }
 
         if (Input.GetKey("a"))
         {
 
-            this.transform.Rotate(new Vector3(0, -rotationspeed * Time.deltaTime, 0));
+            this.transform.Rotate(new Vector3(0, -rotationspeed * Time.deltaTime, 0), Space.World);
 
         }
 

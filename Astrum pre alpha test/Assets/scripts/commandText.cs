@@ -19,7 +19,7 @@ public class commandText : MonoBehaviour
     void Start()
     {
 
-        texts.Add(GameObject.FindWithTag("command").GetComponent<textcommand>());
+        //texts1.Add(GameObject.FindWithTag("command").GetComponent<textcommand>());
 
     }
 
@@ -32,12 +32,13 @@ public class commandText : MonoBehaviour
         if (textText == "/notch")
         {
             
-            textReal = Instantiate(text3, new Vector3(text3.transform.position.x, -167, 0), Quaternion.identity);
+            textReal = Instantiate(text3, new Vector3(text3.transform.position.x, 10, text3.transform.position.z), Quaternion.identity);
             textReal.GetComponent<Text>().text = "You Hath Been Smitten";
             textReal.transform.SetParent(texts.transform);
+            textReal.transform.position = new Vector3(text3.transform.position.x, 10, text3.transform.position.z);
             textReal.GetComponent<Animator>().Play("text fade");
-            texts1.Add(textReal.GetComponent<textcommand>());
-            texts1.newScript.texts2.Add(textReal.GetComponent<textcommand>());
+            //texts1.Add(textReal.GetComponent<textcommand>());
+            //texts1.newScript.texts2.Add(textReal.GetComponent<textcommand>());
 
         }
         else if (textText == "/help")
@@ -46,9 +47,10 @@ public class commandText : MonoBehaviour
             //text.GetComponent<Text>().text = "/notch";
             text.GetComponent<Text>().text = "/makeitrain";
             text2.GetComponent<Text>().text = "/mintchip";
-            text2.transform.position = new Vector3(text2.transform.position.x, -90, 
+            text2.transform.localPosition = new Vector3(text2.transform.position.x, -160, 
                 text2.transform.position.z);
             text2.GetComponent<Animator>().Play("text fade");
+            text.GetComponent<Animator>().Play("text fade");
 
         }
         else if (textText == "/makeitrain")
@@ -58,7 +60,8 @@ public class commandText : MonoBehaviour
                 (1000 - GameObject.FindWithTag("Player").GetComponent<ShipStats>().energy).ToString()
                 + " energy";
             GameObject.FindWithTag("Player").GetComponent<ShipStats>().energy = 1000;
-             
+            text.GetComponent<Animator>().Play("text fade");
+
         }
         else if (textText == "/mintchip")
         {
@@ -67,6 +70,7 @@ public class commandText : MonoBehaviour
                 (1000 - GameObject.FindWithTag("Player").GetComponent<ShipStats>().health).ToString()
                 + " health";
             GameObject.FindWithTag("Player").GetComponent<ShipStats>().health = 1000;
+            text.GetComponent<Animator>().Play("text fade");
 
         }
         else
@@ -76,7 +80,7 @@ public class commandText : MonoBehaviour
 
         }
 
-        text.GetComponent<Animator>().Play("text fade");
+
 
     }
 

@@ -9,6 +9,7 @@ public class titlescreen : MonoBehaviour
 
     public GameObject titlemenu;
     public GameObject start;
+    public GameObject start2;
     public GameObject options;
     public GameObject aaudio;
 
@@ -54,6 +55,7 @@ public class titlescreen : MonoBehaviour
 
         titlemenu.SetActive(true);
         start.SetActive(false);
+        start2.SetActive(false);
         options.SetActive(false);
         aaudio.SetActive(false);
 
@@ -64,6 +66,18 @@ public class titlescreen : MonoBehaviour
 
         titlemenu.SetActive(false);
         start.SetActive(true);
+        start2.SetActive(false);
+        options.SetActive(false);
+        aaudio.SetActive(false);
+
+    }
+
+    public void sStart2()
+    {
+
+        titlemenu.SetActive(false);
+        start.SetActive(false);
+        start2.SetActive(true);
         options.SetActive(false);
         aaudio.SetActive(false);
 
@@ -74,6 +88,7 @@ public class titlescreen : MonoBehaviour
 
         titlemenu.SetActive(false);
         start.SetActive(false);
+        start2.SetActive(false);
         options.SetActive(true);
         aaudio.SetActive(false);
 
@@ -84,6 +99,7 @@ public class titlescreen : MonoBehaviour
 
         titlemenu.SetActive(false);
         start.SetActive(false);
+        start2.SetActive(false);
         options.SetActive(false);
         aaudio.SetActive(true);
 
