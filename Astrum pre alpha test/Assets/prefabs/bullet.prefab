@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8932798176563043808}
   - component: {fileID: 2630503208202375567}
   - component: {fileID: 1242260943662315859}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bullet
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -110,6 +110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   paintballdurability: 0
+  timeDestory: 1
 --- !u!54 &1242260943662315859
 Rigidbody:
   m_ObjectHideFlags: 0

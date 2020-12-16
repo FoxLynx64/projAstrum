@@ -15,9 +15,9 @@ GameObject:
   - component: {fileID: 213491018517207966}
   - component: {fileID: 6284869141324959637}
   - component: {fileID: 2830475940287574879}
-  - component: {fileID: 8146962581551038723}
   - component: {fileID: 3480619088834167075}
-  m_Layer: 0
+  - component: {fileID: -4086639393416837802}
+  m_Layer: 8
   m_Name: Health Asteroid
   m_TagString: Asteroid
   m_Icon: {fileID: 0}
@@ -147,21 +147,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingVelocity: 65
---- !u!114 &8146962581551038723
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 485635520015669154}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a546a100a95ad964a855eafa0cf075c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  asteroid: {fileID: 485635520015669154}
-  callMerge: 0
-  asteroidNumber: 0
 --- !u!114 &3480619088834167075
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,3 +162,18 @@ MonoBehaviour:
   player: {fileID: 0}
   healthreward: 6
   healthpenalty: 2
+--- !u!114 &-4086639393416837802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 485635520015669154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a546a100a95ad964a855eafa0cf075c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  asteroid: {fileID: 485635520015669154}
+  callMerge: 0
+  asteroidNumber: 0

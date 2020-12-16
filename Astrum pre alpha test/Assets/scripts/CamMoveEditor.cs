@@ -36,12 +36,9 @@ public class CamMoveEditor : MonoBehaviour
                 realCamera.transform.localPosition = new Vector3(0, 0, Mathf.Min(Mathf.Max((z - (Input.GetAxis("Mouse ScrollWheel") * (z/2))), -10), -1.5f));
 
             }
-            
-        }
-        if(click)
-        {
 
-        while (Input.GetAxis("Fire1") == 1)
+        }
+        if (Input.GetAxis("Fire4") == 1)
         {
 
             //tells pivot gameobject to follow the center of the sphere/character
@@ -56,25 +53,13 @@ public class CamMoveEditor : MonoBehaviour
             //if(ccamera.transform.eulerAngles.x <= 45 || ccamera.transform.eulerAngles.x >= 315)
             //{
 
-            //virtical rotation
-            ccamera.transform.Rotate(new Vector3(-Input.GetAxis("Mouse Y") * Ssensitivity * Time.deltaTime, 0, 0));
-            ccamera.transform.Rotate(new Vector3(-Input.GetAxis("right joystick V") * Ssensitivity * Time.deltaTime, 0, 0));
+                //virtical rotation
+                ccamera.transform.Rotate(new Vector3(-Input.GetAxis("Mouse Y") * Ssensitivity * Time.deltaTime, 0, 0));
+                ccamera.transform.Rotate(new Vector3(-Input.GetAxis("right joystick V") * Ssensitivity * Time.deltaTime, 0, 0));
 
             //}
 
         }
-
-        }
-       
-    }
-
-    public void rotate(bool theClick)
-    {
-
-        Debug.Log("is running now");
-
-        click = theClick;
-        click = false;
 
     }
 

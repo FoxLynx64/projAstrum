@@ -43,6 +43,13 @@ public class energycollectable : MonoBehaviour
             Destroy(this.gameObject);
 
         }
+        else
+        {
+
+
+
+        }
+        Debug.Log(col.gameObject);
 
     }
 

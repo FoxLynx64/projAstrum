@@ -6,12 +6,13 @@ public class paintball : MonoBehaviour
 {
 
     public float paintballdurability;
+    public float timeDestory = 1f;
 
     // Use this for initialization
     void Start()
     {
         //destroy this object after 1 seconds to reduce lag
-        Destroy(gameObject, 0.5f);
+        Destroy(gameObject, timeDestory);
 
     }
 

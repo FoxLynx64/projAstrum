@@ -30,7 +30,6 @@ public class jumpin : MonoBehaviour
         ship.enabled = false;
         //gets scripts that need to be enabled for vehicle to operate properly
         vehicleScript = GetComponent<playermovement>();
-        vehiclecamScript = carcam.GetComponent<CameraMovement>();
         //finds FPS player stuff
 
 
@@ -62,7 +61,6 @@ public class jumpin : MonoBehaviour
             if (Input.GetButtonDown("Fire3"))
             {
                 //sets vehicle scripts to be active
-                vehiclecamScript.enabled = true;
                 vehicleScript.enabled = true;
                 //makes it so the player will spawn back were-ever the vehicle moves
                 player.transform.parent = gameObject.transform;
@@ -112,7 +110,6 @@ public class jumpin : MonoBehaviour
             ship.enabled = false;
             //disable the vehicle movement scripts so you 
             //dont move them while using the FPSPlayer
-            vehiclecamScript.enabled = false;
             vehicleScript.enabled = false;
             //un-parents the FPSPlayer and re-activates it
             player.SetActive(true);

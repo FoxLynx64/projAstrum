@@ -6,12 +6,14 @@ using UnityEngine.UI;
 public class commandText : MonoBehaviour
 {
 
+    public nearestSystem script;
+
     public GameObject text;
     public GameObject text2;
     public GameObject text3;
     public GameObject texts;
 
-    private GameObject textReal;
+    public GameObject textReal;
 
     public List<textcommand> texts1 = new List<textcommand>();
 
@@ -46,7 +48,9 @@ public class commandText : MonoBehaviour
 
             //text.GetComponent<Text>().text = "/notch";
             text.GetComponent<Text>().text = "/makeitrain";
-            text2.GetComponent<Text>().text = "/mintchip";
+            text2.GetComponent<Text>().text = "/closestsolarsystem";
+            text2.transform.localPosition = new Vector3(text.transform.position.x, -130,
+                text.transform.position.z);
             text2.transform.localPosition = new Vector3(text2.transform.position.x, -160, 
                 text2.transform.position.z);
             text2.GetComponent<Animator>().Play("text fade");
@@ -73,10 +77,19 @@ public class commandText : MonoBehaviour
             text.GetComponent<Animator>().Play("text fade");
 
         }
+        else if (textText == "/closestsolarsystem")
+        {
+
+            text.GetComponent<Text>().text = script.nearestSolarSystem;
+            Debug.Log(script.nearestSolarSystem);
+            text.GetComponent<Animator>().Play("text fade");
+
+        }
         else
         {
 
             text.GetComponent<Text>().text= "Invalid Command";
+            text.GetComponent<Animator>().Play("text fade");
 
         }
 

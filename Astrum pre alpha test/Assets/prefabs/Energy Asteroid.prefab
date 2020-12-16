@@ -15,9 +15,9 @@ GameObject:
   - component: {fileID: 1097819385927067711}
   - component: {fileID: 6553321530572487732}
   - component: {fileID: 3066277098565746942}
-  - component: {fileID: 8990758621695701666}
   - component: {fileID: 7686532438127681753}
-  m_Layer: 0
+  - component: {fileID: -246547705950816792}
+  m_Layer: 8
   m_Name: Energy Asteroid
   m_TagString: Asteroid
   m_Icon: {fileID: 0}
@@ -147,21 +147,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingVelocity: 65
---- !u!114 &8990758621695701666
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 826154310115304451}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a546a100a95ad964a855eafa0cf075c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  asteroid: {fileID: 826154310115304451}
-  callMerge: 0
-  asteroidNumber: 0
 --- !u!114 &7686532438127681753
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,3 +163,18 @@ MonoBehaviour:
   energyreward: 6
   badenergyreward: 2
   healthpenalty: 2
+--- !u!114 &-246547705950816792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 826154310115304451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a546a100a95ad964a855eafa0cf075c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  asteroid: {fileID: 826154310115304451}
+  callMerge: 0
+  asteroidNumber: 0

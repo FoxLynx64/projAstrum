@@ -41,7 +41,7 @@ public class healthcollect : MonoBehaviour
             Destroy(this.gameObject);
 
         }
-
+        Debug.Log(col.gameObject);
     }
 
 }
