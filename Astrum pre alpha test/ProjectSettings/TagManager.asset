@@ -8,6 +8,7 @@ TagManager:
   - FPSPlayer
   - Asteroid
   - Star
+  - command
   layers:
   - Default
   - TransparentFX
@@ -17,9 +18,9 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
+  - asteroid
+  - bullet
+  - player
   - 
   - 
   - 

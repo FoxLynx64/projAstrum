@@ -21,6 +21,7 @@ public class jumpin : MonoBehaviour
     public GameObject guide;
 	public Transform playercampos;
     public Collider ship;
+    public GameObject ThirdPersonCam;
 
 
     //called on start
@@ -82,10 +83,17 @@ public class jumpin : MonoBehaviour
                 guntwo.GetComponent<shooting>().enabled = true;
                 meshcoll.SetActive(false);
                 ship.enabled = true;
+                if (ThirdPersonCam.activeSelf == true)
+                {
+
                 guide.SetActive(true);
 
+                }
+
             }
+
         }
+
     }
     //is called when something leaves the trigger collider
     void OnTriggerExit(Collider other)

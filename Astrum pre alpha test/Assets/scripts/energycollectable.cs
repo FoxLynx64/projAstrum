@@ -13,6 +13,8 @@ public class energycollectable : MonoBehaviour
     public int badenergyreward = 1;
     public int healthpenalty = 1;
 
+    private float newMass;
+
 
     void Start()
     {
@@ -28,10 +30,33 @@ public class energycollectable : MonoBehaviour
         if (col.gameObject.tag == "Bullet")
         {
 
-            script.collected += 1;
-            script.energy += energyreward;
+            if (this.gameObject.GetComponent<Rigidbody>().mass <= 50)
+            {
 
-            Destroy(this.gameObject);
+                Debug.Log("not split");
+
+                script.collected += 1;
+                script.energy += energyreward;
+
+                Destroy(this.gameObject);
+
+            }
+            else if (this.gameObject.GetComponent<Rigidbody>().mass > 50)
+            {
+
+                Debug.Log("split");
+
+                newMass = Mathf.Pow((((4 / 3) * Mathf.PI * 
+                    Mathf.Pow((this.gameObject.GetComponent<Rigidbody>().mass / 2), 3))/2) / Mathf.PI / 
+                    (4 / 3), 1f / 3f) * 2;
+                this.gameObject.GetComponent<Rigidbody>().mass = newMass;
+                this.gameObject.transform.localScale = new Vector3
+                    (this.gameObject.GetComponent<Rigidbody>().mass, 
+                    this.gameObject.GetComponent<Rigidbody>().mass, 
+                    this.gameObject.GetComponent<Rigidbody>().mass);
+                //Destroy(this.gameObject);
+
+            }
 
         }
         else if (col.gameObject.tag == "Player")

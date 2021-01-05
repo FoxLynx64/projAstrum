@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 2830475940287574879}
   - component: {fileID: 3480619088834167075}
   - component: {fileID: -4086639393416837802}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Health Asteroid
   m_TagString: Asteroid
   m_Icon: {fileID: 0}

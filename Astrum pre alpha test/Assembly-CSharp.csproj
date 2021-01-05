@@ -96,11 +96,11 @@
      <Compile Include="Assets\scripts\playermovement.cs" />
      <Compile Include="Assets\scripts\AIShip.cs" />
      <Compile Include="Assets\scripts\DCPU.cs" />
+     <Compile Include="Assets\scripts\cameraSwitch.cs" />
      <Compile Include="Assets\scripts\textcommand.cs" />
      <Compile Include="Assets\scripts\healthcollect.cs" />
      <Compile Include="Assets\scripts\randompopulation.cs" />
      <Compile Include="Assets\scripts\artGrav.cs" />
-     <Compile Include="Assets\scripts\cameraSwitch.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

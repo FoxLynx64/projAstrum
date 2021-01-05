@@ -69,7 +69,7 @@ public class asteroidCombiner : MonoBehaviour
                     //Instantiate(asteroid, this.gameObject.transform.position + new Vector3(0, 80, 80), Quaternion.identity);
                     //Instantiate(asteroid, this.gameObject.transform.position + new Vector3(-80, 80, 0), Quaternion.identity);
 
-                    Destroy (this.gameObject);
+                    //Destroy (this.gameObject);
 
                 }
 
@@ -114,7 +114,7 @@ public class asteroidCombiner : MonoBehaviour
         else if (col.gameObject.tag == "Star")
         {
 
-            Destroy(this.gameObject);
+            //Destroy(this.gameObject);
 
         }
 
