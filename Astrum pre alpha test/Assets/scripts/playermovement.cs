@@ -17,6 +17,8 @@ public class playermovement : MonoBehaviour
     public float warpspeed = 1;
     public float Ssensitivity;
 
+    public GameObject ThirdPersonCam;
+
     public Rigidbody Rigid;
 
 
@@ -114,14 +116,60 @@ public class playermovement : MonoBehaviour
         if (Input.GetKey("w"))
         {
 
-            this.transform.Rotate(new Vector3(-rotationspeed * Time.deltaTime, 0, 0));
+            if (ThirdPersonCam.activeSelf == true)
+            {
+
+                if (this.transform.rotation.eulerAngles.x > 95 && this.transform.rotation.eulerAngles.x < 271)
+                {
+
+
+
+                }
+                else
+                {
+
+                    this.transform.Rotate(new Vector3(-rotationspeed * Time.deltaTime, 0, 0));
+
+                }
+
+            }
+            else
+            {
+
+                this.transform.Rotate(new Vector3(-rotationspeed * Time.deltaTime, 0, 0));
+
+            }
 
         }
 
         if (Input.GetKey("s"))
         {
 
-            this.transform.Rotate(new Vector3(rotationspeed * Time.deltaTime, 0, 0));
+            if (ThirdPersonCam.activeSelf == true)
+            {
+
+                if (this.transform.rotation.eulerAngles.x > 89 && this.transform.rotation.eulerAngles.x < 270)
+                {
+
+
+
+                }
+                else
+                {
+
+                    this.transform.Rotate(new Vector3(rotationspeed * Time.deltaTime, 0, 0));
+
+                }
+
+            }
+            else
+            {
+
+                this.transform.Rotate(new Vector3(rotationspeed * Time.deltaTime, 0, 0));
+
+            }
+            
+            //Debug.Log(this.transform.rotation.eulerAngles.x);
 
         }
 

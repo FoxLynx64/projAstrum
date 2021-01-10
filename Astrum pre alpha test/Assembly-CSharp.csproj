@@ -67,6 +67,7 @@
      <Compile Include="Assets\SampleScenes\Menu\Scripts\PauseMenu.cs" />
      <Compile Include="Assets\scripts\jumpin.cs" />
      <Compile Include="Assets\scripts\planetGravity.cs" />
+     <Compile Include="Assets\scripts\SongManager.cs" />
      <Compile Include="Assets\scripts\levelscore.cs" />
      <Compile Include="Assets\scripts\timeMultiplier.cs" />
      <Compile Include="Assets\scripts\system.cs" />
@@ -101,6 +102,7 @@
      <Compile Include="Assets\scripts\healthcollect.cs" />
      <Compile Include="Assets\scripts\randompopulation.cs" />
      <Compile Include="Assets\scripts\artGrav.cs" />
+     <Compile Include="Assets\scripts\notGameManager.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

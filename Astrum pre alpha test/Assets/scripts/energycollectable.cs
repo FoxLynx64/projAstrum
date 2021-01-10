@@ -13,6 +13,7 @@ public class energycollectable : MonoBehaviour
     public int badenergyreward = 1;
     public int healthpenalty = 1;
 
+    private bool split;
     private float newMass;
 
 
@@ -33,12 +34,25 @@ public class energycollectable : MonoBehaviour
             if (this.gameObject.GetComponent<Rigidbody>().mass <= 50)
             {
 
-                Debug.Log("not split");
+                if (split == false)
+                {
 
-                script.collected += 1;
-                script.energy += energyreward;
+                    Debug.Log("not split");
 
-                Destroy(this.gameObject);
+                    Debug.Log(this.gameObject.GetComponent<Rigidbody>().mass);
+
+                    script.collected += 1;
+                    script.energy += energyreward;
+
+                    Destroy(this.gameObject);
+
+                }
+                else
+                {
+
+                    split = false;
+
+                }
 
             }
             else if (this.gameObject.GetComponent<Rigidbody>().mass > 50)
@@ -54,7 +68,16 @@ public class energycollectable : MonoBehaviour
                     (this.gameObject.GetComponent<Rigidbody>().mass, 
                     this.gameObject.GetComponent<Rigidbody>().mass, 
                     this.gameObject.GetComponent<Rigidbody>().mass);
-                //Destroy(this.gameObject);
+
+                Instantiate(this.gameObject, new Vector3(this.gameObject.transform.position.x + 
+                    (this.gameObject.GetComponent<Rigidbody>().mass * 1.5f), 
+                    this.gameObject.transform.position.y + 
+                    (this.gameObject.GetComponent<Rigidbody>().mass * 1.5f), 
+                    this.gameObject.transform.position.z + 
+                    (this.gameObject.GetComponent<Rigidbody>().mass * 1.5f)), 
+                    Quaternion.identity);
+
+                split = true;
 
             }
 

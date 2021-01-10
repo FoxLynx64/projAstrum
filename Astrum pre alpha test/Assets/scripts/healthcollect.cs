@@ -12,6 +12,9 @@ public class healthcollect : MonoBehaviour
     public int healthreward = 1;
     public int healthpenalty = 1;
 
+    private bool split;
+    private float newMass;
+
 
     void Start()
     {
@@ -27,10 +30,53 @@ public class healthcollect : MonoBehaviour
         if (col.gameObject.tag == "Bullet")
         {
 
-            script.collected += 1;
-            script.health += healthreward;
+            if (this.gameObject.GetComponent<Rigidbody>().mass <= 50)
+            {
 
-            Destroy(this.gameObject);
+                if (split == false)
+                {
+
+                    Debug.Log("not split");
+
+                    script.collected += 1;
+                    script.health += healthreward;
+
+                    Destroy(this.gameObject);
+
+                }
+                else
+                {
+
+                    split = false;
+
+                }
+
+            }
+            else if (this.gameObject.GetComponent<Rigidbody>().mass > 50)
+            {
+
+                Debug.Log("split");
+
+                newMass = Mathf.Pow((((4 / 3) * Mathf.PI*
+                    Mathf.Pow((this.gameObject.GetComponent<Rigidbody>().mass / 2), 3))/2) / Mathf.PI / 
+                    (4 / 3), 1f / 3f) * 2;
+                this.gameObject.GetComponent<Rigidbody>().mass = newMass;
+                this.gameObject.transform.localScale = new Vector3
+                    (this.gameObject.GetComponent<Rigidbody>().mass, 
+                    this.gameObject.GetComponent<Rigidbody>().mass, 
+                    this.gameObject.GetComponent<Rigidbody>().mass);
+
+                Instantiate(this.gameObject, new Vector3(this.gameObject.transform.position.x + 
+                    (this.gameObject.GetComponent<Rigidbody>().mass* 1.5f), 
+                    this.gameObject.transform.position.y + 
+                    (this.gameObject.GetComponent<Rigidbody>().mass* 1.5f), 
+                    this.gameObject.transform.position.z + 
+                    (this.gameObject.GetComponent<Rigidbody>().mass* 1.5f)), 
+                    Quaternion.identity);
+
+                split = true;
+
+            }
 
         }
         else if (col.gameObject.tag == "Player")

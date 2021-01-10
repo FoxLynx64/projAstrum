@@ -26,6 +26,7 @@ public class seed : MonoBehaviour
             dateAndTime = dateAndTime.Replace(" ", "");
             dateAndTime = dateAndTime.Replace(":", "");
             dateAndTime = dateAndTime.Replace("PM", "");
+            dateAndTime = dateAndTime.Replace("AM", "");
             int.TryParse(dateAndTime, out randSeed);
             Debug.Log(randSeed);
             currentSeed = randSeed;
